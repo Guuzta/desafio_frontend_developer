@@ -1,0 +1,44 @@
+@import 'default';
+@import 'variables';
+
+
+
+
+.home {
+    text-align: center;
+    background-color: $secondary-color;
+    color: #ffffff;
+    height: 65vh;
+    
+
+    .navigationButtons {
+        
+
+        ul {
+            display: flex;
+            justify-content: center;
+
+            li {
+                margin: 0 10px;
+                padding: 10px 20px;
+                width: 160px;
+                height: 40px;
+                background-color: $btnColors;
+                
+
+                a {
+                    display: flex;
+                    justify-content: center;
+                    color: $primary-color;
+                    
+                }
+            }
+        }
+    }
+}
+
+.productImage {
+    width: 200px;
+    height: 150px;
+    background-color: black;
+}

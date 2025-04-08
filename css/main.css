@@ -1,0 +1,35 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+.home {
+  text-align: center;
+  background-color: #707070;
+  color: #ffffff;
+  height: 65vh;
+}
+.home .navigationButtons ul {
+  display: flex;
+  justify-content: center;
+}
+.home .navigationButtons ul li {
+  margin: 0 10px;
+  padding: 10px 20px;
+  width: 160px;
+  height: 40px;
+  background-color: #ffffff;
+}
+.home .navigationButtons ul li a {
+  display: flex;
+  justify-content: center;
+  color: #888888;
+}
+
+.productImage {
+  width: 200px;
+  height: 150px;
+  background-color: black;
+}/*# sourceMappingURL=main.css.map */
