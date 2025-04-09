@@ -7,16 +7,19 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    background-color: $secondary-color;
     color: #ffffff;
     height: 65vh;
+    background-image: url('../img/bg_image_header.png');
+    background-repeat: no-repeat;
+    background-position: 80% 0%;
     
     h1 + p {
         margin: 40px 0;
     }
 
     .navigationButtons {
-        margin-top: 30px;
+       
+        margin-bottom: 80px;
 
         ul {
             display: flex;
@@ -163,7 +166,8 @@
 
         .product + button {
             margin-top: 70px;
-            padding: 10px 50px;
+            padding: 10px 0;
+            width: 300px;
             background-color: $btnColors;
             color: $primary-color;
             border: 1px solid $primary-color;
@@ -190,13 +194,40 @@
     }
 
     form {
-        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .box {
+            display: flex;
+        }
 
         label {
+
+            margin: 0 30px;
            
             span {
+                margin-bottom: 10px;
                 display: block;
             }
+
+            input {
+                padding: 10px 0;
+                border-width: 30%;
+            }
+        }
+
+        button {
+            padding: 10px 0;
+            width: 300px;
+            margin-top: 70px;
+            margin-bottom: 70px;
+            padding: 10px 50px;
+            background-color: #ffffff;
+            color: #888888;
+            border: 1px solid #888888;
+            font-size: 15px;
+            cursor: pointer;
         }
     }
 }
@@ -204,4 +235,21 @@
 .productImage {
     height: 180px;
     background-color: black;
+}
+
+footer {
+    height: 35vh;
+    background-image: url('../img/bg_image_footer.png');
+    background-repeat: no-repeat;
+    background-position: 80% 0%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    
+
+    span {
+        display: block;
+    }
 }
