@@ -42,7 +42,8 @@
 .registration {
     display: flex;
     justify-content: space-around;
-    padding: 40px;
+    width: 90%;
+    margin: 80px auto;
 
     .information {
         width: 50%;
@@ -102,12 +103,105 @@
             color: $primary-color;
             border: 1px solid $primary-color;
             font-size: 15px;
+            cursor: pointer;
+        }
+    }
+}
+
+.products {
+    width: 90%;
+    margin: 80px auto;
+
+    h3 {
+        color: $secondary-color;
+        text-align: center;
+    }
+
+    .box {
+        
+        margin-top: 50px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        
+        .product {
+            margin: 20px;
+            width: 20%;
+
+            h4 {
+                margin: 15px 0;
+                color: $primary-color;
+                font-weight: 400;
+            }
+
+            p {
+                color: $primary-color;
+            }
+
+            ul {
+                margin: 15px 0;
+                color: $primary-color;
+
+                li:nth-child(2) {
+                    margin: 10px 0;
+                    color: $secondary-color;
+                    font-weight: bold;
+                    font-size: 20px;
+                }
+            }
+
+            button {
+                width: 100%;
+                padding: 10px 0;
+                background-color: $btnColors;
+                color: $primary-color;
+                border: 1px solid $primary-color;
+                font-size: 15px;
+                cursor: pointer;
+            }
+        }
+
+        .product + button {
+            margin-top: 70px;
+            padding: 10px 50px;
+            background-color: $btnColors;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+            font-size: 15px;
+            cursor: pointer;
+        }
+    }
+
+ 
+}
+
+.sharing {
+
+    color: $primary-color;
+    
+    h3 {
+        text-align: center;
+        color: $secondary-color;
+    }
+
+    p {
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    form {
+        margin: 0 auto;
+
+        label {
+           
+            span {
+                display: block;
+            }
         }
     }
 }
 
 .productImage {
-    width: 200px;
-    height: 150px;
+    height: 180px;
     background-color: black;
 }
