@@ -1,28 +1,30 @@
 @import 'default';
 @import 'variables';
 
-
-
-
 .home {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     text-align: center;
     background-color: $secondary-color;
     color: #ffffff;
     height: 65vh;
     
+    h1 + p {
+        margin: 40px 0;
+    }
 
     .navigationButtons {
-        
+        margin-top: 30px;
 
         ul {
             display: flex;
             justify-content: center;
 
             li {
-                margin: 0 10px;
-                padding: 10px 20px;
-                width: 160px;
-                height: 40px;
+                margin: 0 30px;
+                padding: 14px 30px;
                 background-color: $btnColors;
                 
 
@@ -33,6 +35,73 @@
                     
                 }
             }
+        }
+    }
+}
+
+.registration {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px;
+
+    .information {
+        width: 50%;
+
+        h2 {
+            color: $primary-color;
+            font-weight: 400;
+        }
+
+        p {
+            color: $primary-color;
+            margin: 40px 0;
+        }
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 30%;
+        
+        label {
+            margin: 10px 0;
+
+            input {
+                width: 100%;
+                padding: 10px 0;
+            }
+
+            span {
+                display: block;
+                color: $primary-color;
+            }
+
+            span:first-child {
+                margin-bottom: 10px;
+            }
+
+            .checkbox {
+                display: flex;
+                width: fit-content;
+
+                input {
+                    margin-right: 5px;
+                }
+
+                span {
+                    margin-right: 30px;
+                }
+            }
+        }
+
+
+        button {
+            margin-top: 10px;
+            padding: 10px 0;
+            background-color: $btnColors;
+            color: $primary-color;
+            border: 1px solid $primary-color;
+            font-size: 15px;
         }
     }
 }
