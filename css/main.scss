@@ -131,6 +131,18 @@
             margin: 20px;
             width: 20%;
 
+            .productImage {
+                border: 1px solid $primary-color
+            
+                
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+            
+
             h4 {
                 margin: 15px 0;
                 color: $primary-color;
@@ -162,18 +174,19 @@
                 font-size: 15px;
                 cursor: pointer;
             }
-        }
+        }   
+    }
 
-        .product + button {
-            margin-top: 70px;
-            padding: 10px 0;
-            width: 300px;
-            background-color: $btnColors;
-            color: $primary-color;
-            border: 1px solid $primary-color;
-            font-size: 15px;
-            cursor: pointer;
-        }
+    .box + button {
+        margin-top: 70px;
+        padding: 10px 0;
+        width: 300px;
+        background-color: $btnColors;
+        color: $primary-color;
+        border: 1px solid $primary-color;
+        font-size: 15px;
+        cursor: pointer;
+        
     }
 
  
@@ -232,10 +245,8 @@
     }
 }
 
-.productImage {
-    height: 180px;
-    background-color: black;
-}
+
+
 
 footer {
     height: 35vh;
@@ -247,9 +258,15 @@ footer {
     flex-direction: column;
     align-items: center;
     color: white;
+    padding: 40px;
     
+    span:first-child {
+        margin-top: 120px;
+    }
 
     span {
         display: block;
+        font-size: 12px;
+        margin-bottom: 10px;
     }
 }
