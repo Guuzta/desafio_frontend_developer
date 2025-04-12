@@ -1,22 +1,15 @@
-fetch('https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1')
-    .then(data => data.json())
-    .then((item) => {
-        const btnLoadProduct = document.getElementById('moreProducts')
-    
-        setProducts(item.products)
-
-        const nextPage = 'https://' + item.nextPage
-        btnLoadProduct.onclick = () => loadProducts(nextPage)
-    })
-
-function loadProducts (product) {
-    fetch(product)
+function loadProducts (url) {
+    fetch(url)
      .then(data => data.json())
      .then(item => {
         setProducts(item.products)
+        console.log(item.nextPage)
 
-        let nextPage = 'https://' + item.nextPage
-        console.log(nextPage)
+        const nextPage = 'https://' + item.nextPage
+        const btnLoadProduct = document.getElementById('moreProducts')
+        btnLoadProduct.onclick = () => loadProducts(nextPage)
+
+        
      })
 }
 
@@ -49,3 +42,6 @@ function setProducts (products) {
         `
      })
 }
+
+
+loadProducts('https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1')
