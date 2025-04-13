@@ -73,6 +73,18 @@
             input {
                 width: 100%;
                 padding: 10px 0;
+
+                &.error {
+                    border: 1px solid red;
+                }
+
+                &.error + span {
+                    margin-top: 10px;
+                    color: red;
+                    font-style: italic;
+                    font-weight: lighter;
+                    font-size: 13px;
+                }
             }
 
             span {
@@ -88,14 +100,34 @@
                 display: flex;
                 width: fit-content;
 
+                &.error {
+
+                    span {
+                        color: red;
+                    }
+                }
+                
+
                 input {
                     margin-right: 5px;
+                    
                 }
 
                 span {
                     margin-right: 30px;
                 }
+
+               
             }
+
+            .checkbox + span {
+                margin-top: 10px;
+                color: red;
+                font-style: italic;
+                font-weight: lighter;
+                font-size: 13px;
+            }
+           
         }
 
 
@@ -107,6 +139,12 @@
             border: 1px solid $primary-color;
             font-size: 15px;
             cursor: pointer;
+        }
+
+        button + span{
+            color: green;
+            text-align: center;
+            margin-top: 10px;
         }
     }
 }

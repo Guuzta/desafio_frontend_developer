@@ -46,20 +46,23 @@
             </p>
         </div>
 
-        <form>
+        <form id="formRegistration">
             <label>
                 <span>Seu nome:</span>
-                <input type="text">
+                <input type="text" name="name"  pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$">
+                <span></span>
             </label>
 
             <label>
                 <span>E-mail:</span>
-                <input type="email">
+                <input type="email" name="email">
+                <span></span>
             </label>
 
             <label>
                 <span>CPF:</span>
-                <input type="email">
+                <input type="number" name="cpf">
+                <span></span>
             </label>
 
             <label >
@@ -70,9 +73,11 @@
                     <input type="radio" name="sexo" value="feminino">
                     <span>Feminino</span>
                 </div>
+                <span></span>
             </label>
 
-            <button>Enviar</button>
+            <button type="submit" name="submit">Enviar</button>
+            <span></span>
         </form>
     </section>
 

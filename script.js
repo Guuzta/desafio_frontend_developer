@@ -2,14 +2,13 @@ function loadProducts (url) {
     fetch(url)
      .then(data => data.json())
      .then(item => {
+        console.log(url)
         setProducts(item.products)
-        console.log(item.nextPage)
 
         const nextPage = 'https://' + item.nextPage
         const btnLoadProduct = document.getElementById('moreProducts')
         btnLoadProduct.onclick = () => loadProducts(nextPage)
-
-        
+    
      })
 }
 
@@ -43,5 +42,136 @@ function setProducts (products) {
      })
 }
 
+function verifyCpf (cpf) {
+    
+    const cpfNumbers = Array.from(cpf, Number)
+    const isDistinct = cpfNumbers.every(function(curr){
+        return curr === cpfNumbers[0]
+    })
+    
+    
+    if(cpfNumbers.length === 11) {
+        if(!isDistinct) {
+
+            let multiply = 10
+            let total = 0
+            let remainder = 0
+            const firstDigit = cpfNumbers[9]
+            const secondDigit = cpfNumbers[10]
+
+            const verifyDigits = (remainder, digit) => {
+                return remainder === digit ? true : false
+            }
+
+            for(let i = 0; i <= 8; i++) {
+                total += cpfNumbers[i] * multiply
+                multiply--
+            }
+
+            remainder = (total * 10) % 11
+            if (remainder === 10) {
+                remainder = 0
+            }
+            const isFirstValid = verifyDigits(remainder, firstDigit)
+
+            multiply = 11
+            total = 0
+
+            for(let i = 0; i <= 9; i++) {
+                total += cpfNumbers[i] * multiply
+                multiply--
+            }
+
+            remainder = (total * 10) % 11
+            if (remainder === 10) {
+                remainder = 0
+            }
+            const isSecondValid = verifyDigits(remainder, secondDigit)
+
+            return isFirstValid && isSecondValid ? true : false
+
+        } else {
+            return false
+        }
+
+
+    } else {
+        return false
+    }
+   
+}
 
 loadProducts('https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1')
+
+const formRegistration = document.getElementById('formRegistration')
+
+formRegistration.onsubmit = (e) => {
+    e.preventDefault()
+
+    const inputName = document.forms['formRegistration']['name']
+    const spanName = inputName.nextElementSibling
+    let isFormValid = true
+
+    if(inputName.value === '') {
+        inputName.classList.add('error')
+        spanName.innerText = 'Preencha o campo nome!'
+        isFormValid = false
+    } else {
+        inputName.classList.remove('error')
+        spanName.innerText = ''
+    }
+
+    const inputEmail = document.forms['formRegistration']['email']
+    const spanEmail = inputEmail.nextElementSibling
+
+    if(inputEmail.value === '') {
+        inputEmail.classList.add('error')
+        spanEmail.innerText = 'Preencha o campo email!'
+        isFormValid = false
+    } else {
+        inputEmail.classList.remove('error')
+        spanEmail.innerText = ''
+    }
+    
+    const inputCpf = document.forms['formRegistration']['cpf']
+    const spanCpf = inputCpf.nextElementSibling
+
+    
+
+    if(inputCpf.value === '') {
+        inputCpf.classList.add('error')
+        spanCpf.innerText = 'Preencha o campo CPF!'
+        isFormValid = false
+    } else {
+        if(!verifyCpf(inputCpf.value)) {
+            inputCpf.classList.add('error')
+            spanCpf.innerText = 'Digite um CPF válido!'
+            isFormValid = false
+        } else {
+            inputCpf.classList.remove('error')
+            spanCpf.innerText = ''
+        }
+        
+    }
+
+
+
+    const inputSexo = document.forms['formRegistration']['sexo']
+    const checkbox = document.querySelector('.checkbox')
+    const spanCheckbox = checkbox.nextElementSibling
+
+    if(inputSexo.value === '') {
+        checkbox.classList.add('error')
+        spanCheckbox.innerText = 'Selecione o sexo!'
+        isFormValid = false
+    } else {
+        checkbox.classList.remove('error')
+        spanCheckbox.innerText = ''
+    }
+    
+    const spanRegistered = document.forms['formRegistration']['submit'].nextElementSibling
+    
+    if(isFormValid) {
+        spanRegistered.innerText = 'Dados cadastrados com sucesso!'
+    }
+}

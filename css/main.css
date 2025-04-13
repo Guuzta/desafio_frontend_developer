@@ -69,6 +69,16 @@
   width: 100%;
   padding: 10px 0;
 }
+.registration form label input.error {
+  border: 1px solid red;
+}
+.registration form label input.error + span {
+  margin-top: 10px;
+  color: red;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 13px;
+}
 .registration form label span {
   display: block;
   color: #888888;
@@ -81,11 +91,21 @@
   width: -moz-fit-content;
   width: fit-content;
 }
+.registration form label .checkbox.error span {
+  color: red;
+}
 .registration form label .checkbox input {
   margin-right: 5px;
 }
 .registration form label .checkbox span {
   margin-right: 30px;
+}
+.registration form label .checkbox + span {
+  margin-top: 10px;
+  color: red;
+  font-style: italic;
+  font-weight: lighter;
+  font-size: 13px;
 }
 .registration form button {
   margin-top: 10px;
@@ -95,6 +115,11 @@
   border: 1px solid #888888;
   font-size: 15px;
   cursor: pointer;
+}
+.registration form button + span {
+  color: green;
+  text-align: center;
+  margin-top: 10px;
 }
 
 .products {
