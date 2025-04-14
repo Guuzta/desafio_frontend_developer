@@ -94,20 +94,23 @@
 
         <p>Quer que seus amigos também ganhem a lista personalizada deles? Preencha agora!</p>
 
-        <form >
+        <form id="formSharing">
             <div class="box">
                 <label >
                     <span>Nome do seu amigo:</span>
-                    <input type="text" size="50">
+                    <input type="text" size="50" name="name"  pattern="[A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ ]+$">
+                    <span></span>
                 </label>
     
                 <label >
                     <span>E-mail:</span>
-                    <input type="text" size="50">
+                    <input type="text" size="50" name="email">
+                    <span></span>
                 </label>
             </div>
 
-            <button>Enviar agora</button>
+            <button type="submit" name="submit">Enviar agora</button>
+            <span></span>
         </form>
     </section>
 

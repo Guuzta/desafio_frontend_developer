@@ -264,9 +264,23 @@
                 display: block;
             }
 
+            
+
             input {
                 padding: 10px 0;
                 border-width: 30%;
+
+                &.error {
+                    border: 1px solid red;
+                }
+
+                &.error + span {
+                    margin-top: 10px;
+                    color: red;
+                    font-style: italic;
+                    font-weight: lighter;
+                    font-size: 13px;
+                }
             }
         }
 
@@ -274,13 +288,18 @@
             padding: 10px 0;
             width: 300px;
             margin-top: 70px;
-            margin-bottom: 70px;
             padding: 10px 50px;
             background-color: #ffffff;
             color: #888888;
             border: 1px solid #888888;
             font-size: 15px;
             cursor: pointer;
+        }
+
+        button + span {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
         }
     }
 }

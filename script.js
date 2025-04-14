@@ -173,5 +173,45 @@ formRegistration.onsubmit = (e) => {
     
     if(isFormValid) {
         spanRegistered.innerText = 'Dados cadastrados com sucesso!'
+    } else {
+        spanRegistered.innerText = ''
+    }
+}
+
+const formSharing = document.getElementById('formSharing')
+formSharing.onsubmit = (e) => {
+    e.preventDefault()
+
+    const inputNome = document.forms['formSharing']['name']
+    const spanName = inputNome.nextElementSibling
+    let isFormValid = true
+
+    if(inputNome.value === '') {
+        inputNome.classList.add('error')
+        spanName.innerText = 'Preencha o campo nome!'
+        isFormValid = false
+    } else {
+        inputNome.classList.remove('error')
+        spanName.innerText = ''
+    }
+
+    const inputEmail = document.forms['formSharing']['email']
+    const spanEmail = inputEmail.nextElementSibling
+
+    if(inputEmail.value === '') {
+        inputEmail.classList.add('error')
+        spanEmail.innerText = 'Preencha o campo email!'
+        isFormValid = false
+    } else {
+        inputEmail.classList.remove('error')
+        spanEmail.innerText = ''
+    }
+
+    const spanRegistered = document.forms['formSharing']['submit'].nextElementSibling
+
+    if(isFormValid) {
+        spanRegistered.innerText = 'Dados cadastrados com sucesso!'
+    } else {
+        spanRegistered.innerText = ''
     }
 }
