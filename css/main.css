@@ -17,7 +17,6 @@
   height: 65vh;
   background-image: url("../img/bg_image_header.png");
   background-repeat: no-repeat;
-  background-position: 80% 0%;
 }
 .home h1 + p {
   margin: 40px 0;
@@ -264,4 +263,74 @@ footer span {
   display: block;
   font-size: 12px;
   margin-bottom: 10px;
+  text-align: center;
+}
+
+@media (max-width: 450px) {
+  .home {
+    align-items: flex-start;
+    text-align: left;
+    background-position: 60% 0px;
+  }
+  .home .text-wrap {
+    margin-top: 30px;
+    margin-left: 30px;
+  }
+  .home .text-wrap h1 {
+    font-size: 40px;
+  }
+  .home .text-wrap h1 + p {
+    margin-top: 10px;
+    font-size: 15px;
+  }
+  .home .navigationButtons ul {
+    flex-wrap: wrap;
+  }
+  .home .navigationButtons ul li {
+    width: 40%;
+    margin: 10px;
+    padding: 15px;
+  }
+  .registration {
+    flex-direction: column;
+    margin: 20px auto;
+  }
+  .registration .information {
+    width: 100%;
+  }
+  .registration .information h2 {
+    font-size: 20px;
+  }
+  .registration .information p {
+    font-size: 15px;
+  }
+  .registration form {
+    width: 100%;
+  }
+  .products .box {
+    flex-direction: column;
+  }
+  .products .box .product {
+    width: -moz-fit-content;
+    width: fit-content;
+    display: flex;
+  }
+  .products .box .product .productImage {
+    width: 50%;
+  }
+  .products .box .product .productInfo {
+    margin-left: 20px;
+  }
+  .products .box .product .productInfo p {
+    display: none;
+  }
+  .sharing {
+    margin: 80px auto;
+  }
+  .sharing p {
+    margin-bottom: 60px;
+  }
+  .sharing form .box {
+    flex-direction: column;
+  }
 }/*# sourceMappingURL=main.css.map */

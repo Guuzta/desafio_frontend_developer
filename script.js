@@ -22,21 +22,24 @@ function setProducts (products) {
                      <img src=${product.image} alt="">
                  </div>
 
-                 <h4>${product.name}</h3>
+                <div class="productInfo"> 
 
-                 <p>
-                     ${product.description}
-                 </p>
+                    <h4>${product.name}</h3>
 
-                 <ul>
-                     <li>De: R$${product.oldPrice},99</li>
+                    <p>
+                        ${product.description}
+                    </p>
 
-                     <li>Por: R$${product.price},99</li>
+                    <ul>
+                        <li>De: R$${product.oldPrice},99</li>
 
-                     <li>ou ${product.installments.count}x de R$${product.installments.value}</li>
-                 </ul>
+                        <li>Por: R$${product.price},99</li>
 
-                 <button>Comprar</button>
+                        <li>ou ${product.installments.count}x de R$${parseInt(product.installments.value)},99</li>
+                    </ul>
+
+                    <button>Comprar</button>
+                </div>
              </div>
         `
      })
