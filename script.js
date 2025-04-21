@@ -2,7 +2,6 @@ function loadProducts (url) {
     fetch(url)
      .then(data => data.json())
      .then(item => {
-        console.log(url)
         setProducts(item.products)
 
         const nextPage = 'https://' + item.nextPage
@@ -14,12 +13,13 @@ function loadProducts (url) {
 
 function setProducts (products) {
     const $productsList = document.getElementById('productsList')
+    let imageId = 0
 
     products.forEach((product) => {
         $productsList.innerHTML += `
              <div class="product">
                  <div class="productImage">
-                     <img src=${product.image} alt="">
+                     <img src=${images[imageId].url} alt="">
                  </div>
 
                 <div class="productInfo"> 
@@ -42,7 +42,10 @@ function setProducts (products) {
                 </div>
              </div>
         `
+        imageId++
      })
+
+     
 }
 
 function verifyCpf (cpf) {
@@ -218,3 +221,38 @@ formSharing.onsubmit = (e) => {
         spanRegistered.innerText = ''
     }
 }
+
+const images = [
+    {
+        url: './img/img0.png'
+    } , 
+
+    {
+        url: './img/img1.png'
+    } ,
+
+    {
+        url: './img/img2.png'
+    } , 
+
+    {
+        url: './img/img3.png'
+    } , 
+
+    {
+        url: './img/img4.png'
+    } , 
+
+    {
+        url: './img/img5.png'
+    } , 
+
+    {
+        url: './img/img6.png'
+    } , 
+
+    {
+        url: './img/img7.png'
+    } , 
+
+]
